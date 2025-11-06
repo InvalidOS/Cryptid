@@ -6,15 +6,16 @@
 if not Cryptid then
 	Cryptid = {}
 end
-local mod_path = "" .. SMODS.current_mod.path -- this path changes when each mod is loaded, but the local variable will retain Cryptid's path
+Cryptid.mod_obj = SMODS.current_mod
+local mod_path = "" .. Cryptid.mod_obj.path -- this path changes when each mod is loaded, but the local variable will retain Cryptid's path
 Cryptid.path = mod_path
-Cryptid_config = SMODS.current_mod.config or {} --is this nil check needed? idk but i saw crash reports related to this
+Cryptid_config = Cryptid.mod_obj.config or {} --is this nil check needed? idk but i saw crash reports related to this
 
 -- Lovely Patch Target, toggles being able to change gameset config. Here for mod support
 Cryptid_config.gameset_toggle = true
 
 -- Enable optional features
-SMODS.current_mod.optional_features = {
+Cryptid.mod_obj.optional_features = {
 	retrigger_joker = true,
 	post_trigger = true,
 	-- Here are some other ones Steamodded has
@@ -251,6 +252,7 @@ SMODS.calculate_repetitions = function(card, context, reps)
 	return reps
 end
 
+-- idk if the variables here can be made local but if they can be they should
 local cryptidConfigTab = function()
 	cry_nodes = {
 		{
@@ -410,5 +412,5 @@ local cryptidTabs = function()
 		},
 	}
 end
-SMODS.current_mod.extra_tabs = cryptidTabs
-SMODS.current_mod.config_tab = cryptidConfigTab
+Cryptid.mod_obj.extra_tabs = cryptidTabs
+Cryptid.mod_obj.config_tab = cryptidConfigTab
