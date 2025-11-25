@@ -207,7 +207,10 @@ payload = '''
 if args and args.vars and type(args.vars) == "table" then
     local reset = {}
     for i, j in pairs(args.vars) do
-        if Cryptid.is_big(j) then
+        -- this line caused a crash and this is the best fix i can think of
+        if Cryptid.is_big and Cryptid.is_big(j)
+            or (OmegaMeta and type(j) == "table" and getmetatable(j) == OmegaMeta)
+        then
             reset[i] = number_format(j)
         end
     end

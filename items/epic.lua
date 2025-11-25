@@ -2591,7 +2591,7 @@ local starfruit = {
 		idea = { "NinjaBanana" },
 	},
 	check_for_unlock = function(self, args)
-		if args.type == "foods_destroyed" and to_big(args.destroyed) >= 2 then
+		if args.type == "foods_destroyed" and to_number(args.destroyed) >= 2 then
 			unlock_card(self)
 		end
 		if args.type == "cry_lock_all" then
@@ -2617,6 +2617,69 @@ local starfruit = {
 			return card_remove_ref(self, ...)
 		end
 	end,
+}
+
+local room = {
+	object_type = "Joker",
+	dependencies = {
+		items = {
+			"set_cry_epic",
+		},
+	},
+    key = "room",
+    rarity = "cry_epic",
+    cost = 10,
+	order = 301,
+    blueprint_compat = false,
+	demicoloncompat = false,
+
+	atlas = "atlasepic",
+	pos = { x = 5, y = 5 },
+
+	unlocked = false,
+	-- i was going to put this in config.immutable but whatever
+	unlock_req = 2,
+
+	locked_loc_vars = function(self, info_queue, card)
+		return {
+			vars = { self.unlock_req }
+		}
+	end,
+
+    add_to_deck = function(self, card, from_debuff)
+        G.GAME.joker_buffer = G.GAME.joker_buffer - 100
+        G.GAME.consumeable_buffer = G.GAME.consumeable_buffer - 100
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.GAME.consumeable_buffer = 0
+        G.GAME.joker_buffer = 0
+    end,
+
+    update = function(self, card, dt)
+		-- need to make sure it only updates if you're holding it
+		if #SMODS.find_card("j_cry_room") > 0 then
+			G.GAME.joker_buffer = G.GAME.joker_buffer - 100
+			G.GAME.consumeable_buffer = G.GAME.consumeable_buffer - 100
+		end
+    end,
+
+	check_for_unlock = function(self, args)
+		if args.type == "modify_jokers" and G.jokers and #G.jokers.cards >= self.unlock_req * G.jokers.config.card_limit then
+			unlock_card(self)
+		end
+		if args.type == "cry_lock_all" then
+			lock_card(self)
+		end
+		if args.type == "cry_unlock_all" then
+			unlock_card(self)
+		end
+	end,
+
+	cry_credits = {
+		art = { "Lil Mr. Slipstream" },
+		code = { "pi_cubed", "InvalidOS" },
+		idea = { "cassknows" },
+	},
 }
 
 return {
@@ -2649,5 +2712,6 @@ return {
 		clockwork,
 		demicolon,
 		starfruit,
+		room,
 	},
 }

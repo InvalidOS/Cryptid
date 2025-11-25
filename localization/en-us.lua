@@ -2637,6 +2637,18 @@ return {
 					"on {C:attention}Game Over",
 				},
 			},
+			j_cry_room = {
+				name = "Room",
+				text = {
+					"Disables all",
+					"{C:inactive}(Must have room)",
+					"conditions",
+				},
+				unlock = {
+					"Have at least {X:attention,C:white}X#1#{} more",
+					"{C:attention}Jokers{} than {C:attention}Joker slots"
+				},
+			},
 			j_cry_sacrifice = {
 				name = "Sacrifice",
 				text = {
