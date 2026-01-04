@@ -5394,64 +5394,30 @@ return {
 			},
 		},
 		v_dictionary = {
-			a_candy = {
-				"+#1# 糖果",
-			},
-			a_powchips = {
-				"^#1# 筹码",
-			},
-			a_powchips_minus = {
-				"-^#1# 筹码",
-			},
-			a_powmult = {
-				"^#1# 倍率",
-			},
-			a_powmult_minus = {
-				"-^#1# 倍率",
-			},
-			a_powmultchips = {
-				"^#1# 倍率+筹码",
-			},
-			a_powmultchips_minus = {
-				"-^#1# 倍率+筹码",
-			},
-			a_round = {
-				"+#1# 回合",
-			},
-			a_round_minus = {
-				"-#1# 回合",
-			},
-			a_tag_minus = { "-#1# 标签" },
-			a_tags_minus = { "-#1# 标签" },
-			a_tag = {
-				"#1# 标签",
-			},
-			a_tags = {
-				"#1# 标签",
-			},
-			a_xchips = {
-				"X#1# 筹码",
-			},
-			a_xchips_minus = {
-				"-X#1# 筹码",
-			},
-			cry_art = {
-				"美术: #1#",
-			},
-			cry_code = {
-				"程序: #1#",
-			},
-			cry_idea = {
-				"想法: #1#",
-			},
+			a_candy = "+#1# 糖果",
+			a_powchips = "^#1# 筹码",
+			a_powchips_minus = "-^#1# 筹码",
+			a_powmult = "^#1# 倍率",
+			a_powmult_minus = "-^#1# 倍率",
+			a_powmultchips = "^#1# 倍率+筹码",
+			a_powmultchips_minus = "-^#1# 倍率+筹码",
+			a_round = "+#1# 回合",
+			a_round_minus = "-#1# 回合",
+			a_tag_minus = "-#1# 标签",
+			a_tags_minus = "-#1# 标签",
+			a_tag = "#1# 标签",
+			a_tags = "#1# 标签",
+			a_xchips = "X#1# 筹码",
+			a_xchips_minus = "-X#1# 筹码",
+			cry_art = "美术: #1#",
+			cry_code = "程序: #1#",
+			cry_idea = "想法: #1#",
 			cry_sticker_desc = {
 				"使用这张小丑",
 				"在#2##1##2#注#3#",
 				"难度下获胜",
 			},
-			cry_sticker_name = {
-				"#1# 贴纸",
-			},
+			cry_sticker_name = "#1# 贴纸",
 		},
 		v_text = {
 			ch_c_all_rnj = {
