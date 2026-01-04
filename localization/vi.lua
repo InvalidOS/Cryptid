@@ -841,7 +841,7 @@ return {
 			},
 			j_cry_apjoker = {
 				name = "Joker Xuyên Giáp",
-				text = "{X:mult,C:white} X#1# {} Nhân khi đánh {C:attention}Boss Blind{}",
+				text = {"{X:mult,C:white} X#1# {} Nhân khi đánh {C:attention}Boss Blind{}"},
 			},
 			j_cry_arsonist = {
 				name = "Kẻ Đốt Phá",

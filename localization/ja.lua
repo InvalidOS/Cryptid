@@ -1099,7 +1099,7 @@ return {
 			},
 			j_cry_apjoker = {
 				name = "APジョーカー",
-				text = "倍率 {X:mult,C:white} X#1# {} against {C:attention}ボスブラインド{}",
+				text = {"倍率 {X:mult,C:white} X#1# {} against {C:attention}ボスブラインド{}"},
 			},
 			j_cry_arsonist = {
 				name = "放火魔",

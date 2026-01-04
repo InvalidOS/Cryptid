@@ -860,7 +860,7 @@ return {
 			},
 			j_cry_apjoker = {
 				name = "Curinga AP",
-				text = "{X:mult,C:white} X#1# {} Mult contra {C:attention}Blids Chefes{}",
+				text = {"{X:mult,C:white} X#1# {} Mult contra {C:attention}Blids Chefes{}"},
 			},
 			j_cry_arsonist = {
 				name = "Incendiario",

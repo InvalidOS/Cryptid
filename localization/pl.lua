@@ -620,7 +620,7 @@ return {
 			},
 			j_cry_apjoker = {
 				name = "AP Joker",
-				text = "Mnoż. {X:mult,C:white} X#1# {} przeciwko {C:attention}Przeszkadzajkom Bossa{}",
+				text = {"Mnoż. {X:mult,C:white} X#1# {} przeciwko {C:attention}Przeszkadzajkom Bossa{}"},
 			},
 			j_cry_astral_bottle = {
 				name = "Astral w butelce",

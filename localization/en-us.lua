@@ -1098,7 +1098,7 @@ return {
 			},
 			j_cry_apjoker = {
 				name = "AP Joker",
-				text = "{X:mult,C:white} X#1# {} Mult against {C:attention}Boss Blinds{}",
+				text = {"{X:mult,C:white} X#1# {} Mult against {C:attention}Boss Blinds{}"},
 			},
 			j_cry_arsonist = {
 				name = "Arsonist",

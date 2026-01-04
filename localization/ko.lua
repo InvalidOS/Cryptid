@@ -1085,7 +1085,7 @@ return {
 			},
 			j_cry_apjoker = {
 				name = "AP 조커",
-				text = "{C:attention}보스 블라인드{} 상대로 {X:mult,C:white}배수 X#1#{}",
+				text = {"{C:attention}보스 블라인드{} 상대로 {X:mult,C:white}배수 X#1#{}"},
 			},
 			j_cry_arsonist = {
 				name = "방화범",

@@ -609,7 +609,7 @@ return {
 			},
 			j_cry_apjoker = {
 				name = "ББ Джокер",
-				text = "{X:mult,C:white} X#1# {} Множ. против {C:attention}Босс-Блайндов{}",
+				text = {"{X:mult,C:white} X#1# {} Множ. против {C:attention}Босс-Блайндов{}"},
 			},
 			j_cry_big_cube = {
 				name = "Большой Куб",
