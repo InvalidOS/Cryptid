@@ -1374,7 +1374,7 @@ return {
 			},
 			j_cry_arsonist = {
 				name = "纵火犯",
-				text = "打出{C:attention}葫芦{}牌型时，摧毁所有计分牌",
+				text = { "打出{C:attention}葫芦{}牌型时，摧毁所有计分牌" },
 			},
 			j_cry_astral_bottle = {
 				name = "瓶中星球",
@@ -5161,11 +5161,11 @@ return {
 				"52张牌的牌组中的每一张牌",
 				"你疯了?",
 			},
-			["cry_None"] = "出牌为 0 张牌",
+			["cry_None"] = { "出牌为 0 张牌" },
 
-			["cry_Declare0"] = "始终算作顺子",
-			["cry_Declare1"] = "始终算作同花",
-			["cry_Declare2"] = "始终算作葫芦",
+			["cry_Declare0"] = { "始终算作顺子" },
+			["cry_Declare1"] = { "始终算作同花" },
+			["cry_Declare2"] = { "始终算作葫芦" },
 			["cry_Declare0_suitless"] = { "始终算作顺子", "手牌不需要特定花色" },
 			["cry_Declare1_suitless"] = { "始终算作同花", "手牌不需要特定花色" },
 			["cry_Declare2_suitless"] = { "始终算作葫芦", "手牌不需要特定花色" },
@@ -5394,64 +5394,30 @@ return {
 			},
 		},
 		v_dictionary = {
-			a_candy = {
-				"+#1# 糖果",
-			},
-			a_powchips = {
-				"^#1# 筹码",
-			},
-			a_powchips_minus = {
-				"-^#1# 筹码",
-			},
-			a_powmult = {
-				"^#1# 倍率",
-			},
-			a_powmult_minus = {
-				"-^#1# 倍率",
-			},
-			a_powmultchips = {
-				"^#1# 倍率+筹码",
-			},
-			a_powmultchips_minus = {
-				"-^#1# 倍率+筹码",
-			},
-			a_round = {
-				"+#1# 回合",
-			},
-			a_round_minus = {
-				"-#1# 回合",
-			},
+			a_candy = "+#1# 糖果",
+			a_powchips = "^#1# 筹码",
+			a_powchips_minus = "-^#1# 筹码",
+			a_powmult = "^#1# 倍率",
+			a_powmult_minus = "-^#1# 倍率",
+			a_powmultchips = "^#1# 倍率+筹码",
+			a_powmultchips_minus = "-^#1# 倍率+筹码",
+			a_round = "+#1# 回合",
+			a_round_minus = "-#1# 回合",
 			a_tag_minus = "-#1# 标签",
 			a_tags_minus = "-#1# 标签",
-			a_tag = {
-				"#1# 标签",
-			},
-			a_tags = {
-				"#1# 标签",
-			},
-			a_xchips = {
-				"X#1# 筹码",
-			},
-			a_xchips_minus = {
-				"-X#1# 筹码",
-			},
-			cry_art = {
-				"美术: #1#",
-			},
-			cry_code = {
-				"程序: #1#",
-			},
-			cry_idea = {
-				"想法: #1#",
-			},
+			a_tag = "#1# 标签",
+			a_tags = "#1# 标签",
+			a_xchips = "X#1# 筹码",
+			a_xchips_minus = "-X#1# 筹码",
+			cry_art = "美术: #1#",
+			cry_code = "程序: #1#",
+			cry_idea = "想法: #1#",
 			cry_sticker_desc = {
 				"使用这张小丑",
 				"在#2##1##2#注#3#",
 				"难度下获胜",
 			},
-			cry_sticker_name = {
-				"#1# 贴纸",
-			},
+			cry_sticker_name = "#1# 贴纸",
 		},
 		v_text = {
 			ch_c_all_rnj = {
