@@ -434,7 +434,78 @@ local trade = {
 	end,
 	demicoloncompat = true,
 	force_use = function(self, card, area)
-		self:use(card, area)
+		--self:use(card, area)
+		local loc_name = {}
+		local usable_vouchers = {}
+		for k, v in ipairs(G.vouchers.cards) do
+			local can_use = true
+			for kk, vv in ipairs(G.vouchers.cards) do
+				local center = G.P_CENTERS[vv.config.center.key]
+				if center.requires then
+					for _, vvv in pairs(center.requires) do
+						if vvv == v.config.center.key then
+							can_use = false
+							break
+						end
+					end
+				end
+			end
+			if SMODS.is_eternal(v) then
+				can_use = false
+			end
+			if can_use then
+				usable_vouchers[#usable_vouchers + 1] = v
+			end
+		end
+		local unredeemed_voucher = pseudorandom_element(usable_vouchers, pseudoseed("cry_trade"))
+		if not unredeemed_voucher then
+			return
+		end
+		loc_name[1] = unredeemed_voucher.config.center.key
+		unredeemed_voucher:unapply_to_run()
+		G.E_MANAGER:add_event(Event({
+			func = function()
+				Cryptid.update_used_vouchers()
+				return true
+			end,
+		}))
+		G.E_MANAGER:add_event(Event({
+			trigger = "after",
+			delay = 0,
+			func = function()
+				unredeemed_voucher:start_dissolve()
+				return true
+			end,
+		}))
+		for i = 1, 2 do
+			local _pool = get_current_pool("Voucher", nil, nil, nil, true)
+			local center = pseudorandom_element(_pool, pseudoseed("cry_trade_redeem"))
+			local it = 1
+			while center == "UNAVAILABLE" do
+				it = it + 1
+				center = pseudorandom_element(_pool, pseudoseed("cry_trade_redeem_resample" .. it))
+			end
+			loc_name[i + 1] = center
+			if not G.GAME.used_vouchers[center] then
+				G.GAME.used_vouchers[center] = true
+			end
+			Card.apply_to_run(nil, G.P_CENTERS[center])
+		end
+		print(localize({
+			type = "variable",
+			key = "cry_trade_remove",
+			vars = { localize({ type = "name_text", set = "Voucher", key = loc_name[1] }) },
+		}))
+		print(localize({
+			type = "variable",
+			key = "cry_trade_add",
+			vars = { localize({ type = "name_text", set = "Voucher", key = loc_name[2] }) },
+		}))
+		print(localize({
+			type = "variable",
+			key = "cry_trade_add",
+			vars = { localize({ type = "name_text", set = "Voucher", key = loc_name[3] }) },
+		}))
 	end,
 }
 local replica = {
