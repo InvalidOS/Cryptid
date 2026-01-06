@@ -52,7 +52,7 @@ target = "card.lua"
 pattern = "local used_tarot = copier or self"
 position = "after"
 payload = '''
-if self.ability.rental then
+if self.ability.rental and not copier then
 	G.E_MANAGER:add_event(Event({
 		trigger = 'immediate',
 		blocking = false,
@@ -63,7 +63,7 @@ if self.ability.rental then
 	end)}))
 end
 local gone = false
-if self.ability.banana then
+if self.ability.banana and not copier then
     if not self.ability.extinct then
         if SMODS.pseudorandom_probability(self, "oops_it_banana", 1, G.GAME.cry_consumeable_banana_odds, "Banana Sticker") then
 	    local gone = true
