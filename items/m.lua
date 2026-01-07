@@ -1883,10 +1883,20 @@ local longboi = {
 		end
 	end,
 	set_ability = function(self, card, initial, delay_sprites)
-		card.ability.extra.monster = lenient_bignum(G.GAME and G.GAME.monstermult or 1)
-		if to_big(card.ability.extra.monster) >= to_big(1234567654321) then
+		local aaa = lenient_bignum(G.GAME and G.GAME.monstermult or 1)
+		if (Cryptid.safe_get(card, "area", "config", "type") or "") == "title" then
+			card.ability.extra.monster = aaa
+		else
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					card.ability.extra.monster = aaa
+					return true
+				end,
+			}))
+		end
+		if to_big(aaa) >= to_big(1234567654321) then
 			card.children.center:set_sprite_pos({ x = 7, y = 5 })
-		elseif to_big(card.ability.extra.monster) >= to_big(12321) then
+		elseif to_big(aaa) >= to_big(12321) then
 			card.children.center:set_sprite_pos({ x = 7, y = 6 })
 		end
 	end,
