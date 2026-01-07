@@ -11060,7 +11060,7 @@ local emergencychips = {
 			"AlexZGreat",
 		},
 		art = {
-			"Tatteredlurker"
+			"Tatteredlurker",
 		},
 		code = {
 			"BobJoe400",
@@ -11082,7 +11082,15 @@ local emergencychips = {
 		return {
 			vars = {
 				number_format(card.ability.immutable.blind_mult * 100),
-				number_format(G and G.GAME and G.GAME.blind and G.GAME.blind.chips and to_big(G.GAME.blind.chips) > to_big(0) and (G.GAME.blind.chips * card.ability.immutable.blind_mult) or 0)
+				number_format(
+					G
+							and G.GAME
+							and G.GAME.blind
+							and G.GAME.blind.chips
+							and to_big(G.GAME.blind.chips) > to_big(0)
+							and (G.GAME.blind.chips * card.ability.immutable.blind_mult)
+						or 0
+				),
 			},
 		}
 	end,
@@ -11096,7 +11104,7 @@ local emergencychips = {
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					G.hand_text_area.game_chips:juice_up()
-					play_sound('glass'..math.random(1, 6), math.random()*0.2 + 0.9,0.5)
+					play_sound("glass" .. math.random(1, 6), math.random() * 0.2 + 0.9, 0.5)
 					return true
 				end,
 			}))
@@ -11106,9 +11114,9 @@ local emergencychips = {
 			G.STATE_COMPLETE = false
 
 			if to_big(G.GAME.chips) >= to_big(G.GAME.blind.chips) then
-				return { message = localize("k_saved_ex")}
+				return { message = localize("k_saved_ex") }
 			else
-				return { message = localize("k_nope_ex")}
+				return { message = localize("k_nope_ex") }
 			end
 		end
 	end,

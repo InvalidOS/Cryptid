@@ -1727,7 +1727,7 @@ return {
 					"{C:chips}#1#%{} of blind requirement",
 					"as score when sold",
 					"{C:inactive}(Currently {}{C:chips}#2#{}{C:inactive}){}",
-				}
+				},
 			},
 			j_cry_energia = {
 				name = "Energia",
