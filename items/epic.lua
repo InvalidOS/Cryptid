@@ -2633,10 +2633,10 @@ local sundial = {
 	order = 300,
 	blueprint_compat = true,
 	demicoloncompat = true,
+	eternal_compat = false,
 	atlas = "atlasepic",
 	pos = { x = 5, y = 5 },
 	config = { extra = { handleft = 12, handloss = -1 } },
-
 	cry_credits = {
 		art = { "Tatturedlurker" },
 		code = { "candycanearter" },
@@ -2669,6 +2669,7 @@ local sundial = {
 				ref_value = "handleft",
 				scalar_value = "handloss",
 			})
+			return { message = localize("k_upgrade_ex") }
 		end
 
 		if context.selling_self and not context.retrigger_joker and not context.blueprint then
