@@ -1224,6 +1224,12 @@ local quantum_computing = { -- Code T3; Code cards spawn with +1 use
 		return { vars = { (card and card.ability.extra or self.config.extra) } }
 	end,
 	requires = { "v_cry_satellite_uplink" },
+	redeem = function(self, card)
+		G.GAME.extra_multiuse = (G.GAME.extra_multiuse or 0) + card.ability.extra
+	end,
+	unredeem = function(self, card)
+		G.GAME.extra_multiuse = (G.GAME.extra_multiuse or 0) - card.ability.extra
+	end,
 }
 
 -- Triple+ tag tags

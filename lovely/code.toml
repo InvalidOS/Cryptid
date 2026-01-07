@@ -132,7 +132,7 @@ pattern = '''if card.area and (not nc or card.area == G.pack_cards) then card.ar
 position = "before"
 payload = '''
 local cry_muse = false
-if card.ability.cry_multiuse and not (card.ability.cry_multiuse <= 1) then
+if card.ability.cry_multiuse and not (card.ability.cry_multiuse <= 1) and (card.area ~= G.pack_cards) then
 	cry_muse = true
 	dont_dissolve = true
 end

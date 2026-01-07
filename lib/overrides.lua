@@ -272,6 +272,7 @@ function Game:init_game_object()
 	g.bonus_asc_power = 0
 	g.cry_oboe = 0
 	g.boostertag = 0
+	g.extra_multiuse = 0
 	-- Create G.GAME.events when starting a run, so there's no errors
 	g.events = {}
 	g.jokers_sold = {}
@@ -1101,17 +1102,6 @@ function create_card(_type, area, legendary, _rarity, skip_materialize, soulable
 			then
 				card.cry_flipped = true
 			end
-		end
-	end
-	if (card.ability.set == "Code") and G.GAME.used_vouchers.v_cry_quantum_computing then
-		local tot = 0
-		for k, v in pairs(SMODS.find_card("v_cry_quantum_computing")) do
-			tot = tot + v.ability.extra
-		end
-		if card.ability.cry_multiuse then
-			card.ability.cry_multiuse = math.ceil((card.ability.cry_multiuse + tot))
-		else
-			card.ability.cry_multiuse = tot + 1
 		end
 	end
 	if
