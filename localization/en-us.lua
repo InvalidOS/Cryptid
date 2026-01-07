@@ -5433,6 +5433,8 @@ return {
 			cry_art = "Art: #1#",
 			cry_code = "Code: #1#",
 			cry_idea = "Idea: #1#",
+			cry_trade_add = "#1# was redeemed by trade",
+			cry_trade_remove = "#1# was unredeemed by trade",
 		},
 		v_text = {
 			ch_c_cry_all_perishable = { "All Jokers are {C:eternal}Perishable{}" },
