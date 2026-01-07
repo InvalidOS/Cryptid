@@ -2669,7 +2669,6 @@ local sundial = {
 				ref_value = "handleft",
 				scalar_value = "handloss",
 			})
-			return { message = localize("k_upgrade_ex") }
 		end
 
 		if context.selling_self and not context.retrigger_joker and not context.blueprint then
