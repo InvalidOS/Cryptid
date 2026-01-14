@@ -5460,16 +5460,19 @@ return {
 				-- Ctrl+V clipboard paste support
 				local is_ctrl = false
 				if G.CONTROLLER and G.CONTROLLER.held_keys then
-					is_ctrl = G.CONTROLLER.held_keys['lctrl'] or G.CONTROLLER.held_keys['rctrl'] or
-						G.CONTROLLER.held_keys['lgui'] or G.CONTROLLER.held_keys['rgui']
+					is_ctrl = G.CONTROLLER.held_keys["lctrl"]
+						or G.CONTROLLER.held_keys["rctrl"]
+						or G.CONTROLLER.held_keys["lgui"]
+						or G.CONTROLLER.held_keys["rgui"]
 				end
 				if not is_ctrl and love.keyboard then
-					is_ctrl = love.keyboard.isDown('lctrl', 'rctrl', 'lgui', 'rgui')
+					is_ctrl = love.keyboard.isDown("lctrl", "rctrl", "lgui", "rgui")
 				end
-				if args and (args.key == 'v' or args.key == 'V') and is_ctrl then
-					local clipboard = (G.F_LOCAL_CLIPBOARD and G.CLIPBOARD or (love.system and love.system.getClipboardText())) or
-						''
-					if type(clipboard) == 'string' and clipboard ~= "" and G.CONTROLLER.text_input_hook then
+				if args and (args.key == "v" or args.key == "V") and is_ctrl then
+					local clipboard = (
+						G.F_LOCAL_CLIPBOARD and G.CLIPBOARD or (love.system and love.system.getClipboardText())
+					) or ""
+					if type(clipboard) == "string" and clipboard ~= "" and G.CONTROLLER.text_input_hook then
 						G.CONTROLLER.pasting_clipboard = true
 						for i = 1, #clipboard do
 							local c = clipboard:sub(i, i)
