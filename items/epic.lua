@@ -1312,7 +1312,7 @@ local caramel = {
 			card.ability.extra.rounds_remaining = lenient_bignum(to_big(card.ability.extra.rounds_remaining) - 1)
 			if to_big(card.ability.extra.rounds_remaining) > to_big(0) then
 				return {
-					message = { localize("cry_minus_round") },
+					message = localize("cry_minus_round"),
 					colour = G.C.FILTER,
 				}
 			else

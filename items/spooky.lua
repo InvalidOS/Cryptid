@@ -67,7 +67,7 @@ local wrapped = {
 			card.ability.extra.rounds = card.ability.extra.rounds - 1
 			if card.ability.extra.rounds > 0 then
 				return {
-					message = { localize("cry_minus_round") },
+					message = localize("cry_minus_round"),
 					colour = G.C.FILTER,
 				}
 			else
@@ -1516,7 +1516,7 @@ local candy_cane = {
 			card.ability.extra.rounds = lenient_bignum(to_big(card.ability.extra.rounds) - 1)
 			if to_big(card.ability.extra.rounds) > to_big(0) then
 				return {
-					message = { localize("cry_minus_round") },
+					message = localize("cry_minus_round"),
 					colour = G.C.FILTER,
 				}
 			else
