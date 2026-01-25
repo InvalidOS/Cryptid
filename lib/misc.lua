@@ -303,7 +303,7 @@ function Card:is_jolly()
 	if self.ability.name == "Jolly Joker" or self.ability.name == "cry-jollysus Joker" then
 		return true
 	end
-	if self.edition and self.edition.key == "e_cry_m" then
+	if self.edition and self.edition.key == "e_cry_m" and not self.debuff then
 		return true
 	end
 	return false
