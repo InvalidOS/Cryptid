@@ -3522,7 +3522,6 @@ return {
 					"and {C:attention}special effects{}",
 					"of {C:attention}every{} sleeve won",
 					"with {C:gold}Gold Stake{}",
-					"{C:red}WIP",
 				},
 			},
 		},
